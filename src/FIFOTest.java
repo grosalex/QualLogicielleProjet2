@@ -6,7 +6,7 @@ import org.junit.Test;
 public class FIFOTest {
 
 	@Test
-	public void testBoundedStack() {
+	public void testStack() {
 		FIFO toT = new FIFO(10);
 		assertNotNull(toT);
 	}

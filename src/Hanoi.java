@@ -19,16 +19,19 @@ public class Hanoi {
 
 	}
 	
-
 	public boolean moveADisk(int from, int to){
-		if( ( slots[to].getNumberOfElements()== 0 ||slots[to].head()>slots[from].head() )
-				&& to>=0 && to<=3 
-				&& from>=0 && from<=3 
-				&& !slots[from].isEmpty()){
-//			System.out.println("Moving disc"+slots[to].head()+" from tower "+to+" into tower "+from + " with disc " + slots[from].hashCode() + "on top.");
-			slots[to].push(slots[from].head());
-			slots[from].pop();			
-			return true;
+		try{
+			if( ( slots[to].getNumberOfElements()== 0 ||slots[to].head()>slots[from].head() )
+					&& to>=0 && to<=3 
+					&& from>=0 && from<=3 
+					&& !slots[from].isEmpty()){
+	//			System.out.println("Moving disc"+slots[to].head()+" from tower "+to+" into tower "+from + " with disc " + slots[from].hashCode() + "on top.");
+				slots[to].push(slots[from].head());
+				slots[from].pop();			
+				return true;
+			}
+		}catch(IllegalStateException e){
+			e.printStackTrace();
 		}
 		return false;
 	}

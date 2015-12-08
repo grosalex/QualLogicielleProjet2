@@ -16,6 +16,7 @@ public class BoundedTest {
 		int size = 10;
 		BoundedStack toT = new BoundedStack(size);
 		assertEquals(size,toT.getSize());
+		
 		//fail("Not yet implemented");
 	}
 

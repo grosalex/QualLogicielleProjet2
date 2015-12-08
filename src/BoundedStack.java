@@ -2,6 +2,7 @@
 public class BoundedStack {
 	private int [] stack;
 	private int number;
+	
 	public BoundedStack(int size){
 		stack = new int[size];
 		number=0;

@@ -27,8 +27,10 @@ public class HanoiTest {
 		}
 		
 	}
+	
+	@Test
 	public void testAllHanoi(){
-		
+		move(3,0,2,1);
 	}
 	
 	public void move(int number, int from, int to, int via){

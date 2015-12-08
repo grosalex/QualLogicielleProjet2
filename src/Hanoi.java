@@ -20,6 +20,7 @@ public class Hanoi {
 	}
 	
 	public boolean moveADisk(int from, int to){
+		print();
 		try{
 			if( ( slots[to].getNumberOfElements()== 0 ||slots[to].head()>slots[from].head() )
 					&& to>=0 && to<=3 
@@ -28,6 +29,7 @@ public class Hanoi {
 	//			System.out.println("Moving disc"+slots[to].head()+" from tower "+to+" into tower "+from + " with disc " + slots[from].hashCode() + "on top.");
 				slots[to].push(slots[from].head());
 				slots[from].pop();			
+				print();
 				return true;
 			}
 		}catch(IllegalStateException e){
@@ -42,7 +44,8 @@ public class Hanoi {
 	public void print () {
 		for (int i = 0; i < slots.length; i++) {
 			printATower(i);
-		}
+			
+		}System.out.println();
 	}
 	
 	public void printATower(int index) {
@@ -52,8 +55,9 @@ public class Hanoi {
 			for (int i = 0; i < slots[index].getNumberOfElements(); i++) {
 				System.out.print(slots[index].getArrayElement(i) + " ");
 			}
-			System.out.println();
 		}
+		System.out.println();
+
 	}
 
 }

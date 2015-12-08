@@ -32,6 +32,19 @@ public class HanoiTest {
 	public void testAllHanoi(){
 		toTest.print();
 		move(3,0,2,1);
+		assertTrue(toTest.getSlots()[0].isEmpty());
+		assertTrue(toTest.getSlots()[1].isEmpty());
+		assertTrue(toTest.getSlots()[2].isFull());
+		try {
+			assertEquals(1,toTest.getSlots()[2].head());
+			toTest.getSlots()[2].pop();
+			assertEquals(2,toTest.getSlots()[2].head());
+			toTest.getSlots()[2].pop();
+			assertEquals(3,toTest.getSlots()[2].head());
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void move(int number, int from, int to, int via){

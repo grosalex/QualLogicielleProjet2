@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class HanoiTest {
-
+	private Hanoi toTest = new Hanoi(3);
 	@Test
 	public void testHanoi() {
 		fail("Not yet implemented");
@@ -16,11 +16,13 @@ public class HanoiTest {
 	public void testAllHanoi(){
 		
 	}
-	public void move(Hanoi in,int number, int from, int to, int via){
+	
+	public void move(int number, int from, int to, int via){
+		
 		if(number>0){
-			move(in,number-1,from,via,to);
-			in.moveADisk(from, to);
-			move(in,number-1,via,to,from);
+			move(number-1,from,via,to);
+			toTest.moveADisk(from, to);
+			move(number-1,via,to,from);
 		}
 	}
 

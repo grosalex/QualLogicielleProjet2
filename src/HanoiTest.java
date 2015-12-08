@@ -14,13 +14,15 @@ public class HanoiTest {
 	public void testMoveADisk() {
 		//fail("Not yet implemented");
 		Hanoi toT =  new Hanoi(3);
-		BoundedStack[] result = toT.getSlots();
-		int tmp1 = result[0].head();
-		result[0].pop();
-		int tmp2 = result[0].head();
-		toT.moveADisk(0,1);
-		assertEquals(tmp2,toT.getSlots()[0].head());
-		assertEquals(tmp1,result[1].head());
+		Hanoi init = new Hanoi(3);
+		
+
+		assertTrue(toT.moveADisk(0,1));
+		
+		assertEquals(init.getSlots()[0].head(),toT.getSlots()[1].head());
+		//assertEquals(tmp1,toT.getSlots()[1].head());
+		init.getSlots()[0].pop();
+		assertEquals(init.getSlots()[0].head(), toT.getSlots()[0].head());
 	}
 	public void testAllHanoi(){
 		

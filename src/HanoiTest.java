@@ -19,8 +19,7 @@ public class HanoiTest {
 		result[0].pop();
 		int tmp2 = result[0].head();
 		toT.moveADisk(0,1);
-		result=toT.getSlots();
-		assertEquals(tmp2,result[0].head());
+		assertEquals(tmp2,toT.getSlots()[0].head());
 		assertEquals(tmp1,result[1].head());
 	}
 	public void testAllHanoi(){

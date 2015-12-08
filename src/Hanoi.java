@@ -3,8 +3,8 @@ public class Hanoi {
 	private BoundedStack[] slots; 
 	
 	public Hanoi(int number){
-		slots= new BoundedStack[number];
-		for (int i=0;i<number;i++){
+		slots= new BoundedStack[3];
+		for (int i=0;i<3;i++){
 			slots[i] = new BoundedStack(number);
 		}
 	}

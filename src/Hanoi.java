@@ -8,8 +8,9 @@ public class Hanoi {
 			slots[i] = new BoundedStack(number);
 			
 		}
-		for(int i =number;i<0;i--)
-		slots[0].push(i);
+		for(int i =number;i>0;i--){
+			slots[0].push(i);
+		}
 	}
 	
 	public void moveADisk(int from, int to){
@@ -17,6 +18,9 @@ public class Hanoi {
 			slots[to].push(slots[from].head());
 			slots[from].pop();
 		}
+	}
+	public BoundedStack[] getSlots(){
+		return slots;
 	}
 
 

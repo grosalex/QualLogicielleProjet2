@@ -35,4 +35,8 @@ public class BoundedStack {
 		//stack[number]=;
 		number--;
 	}
+	
+	public int getArrayElement(int index) {
+		return stack[index];
+	}
 }

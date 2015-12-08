@@ -16,7 +16,6 @@ public class FIFOTest {
 		int size = 10;
 		FIFO toT = new FIFO(size);
 		assertEquals(size,toT.getSize());
-		//fail("Not yet implemented");
 	}
 
 	@Test
@@ -78,7 +77,6 @@ public class FIFOTest {
 		assertEquals(toT.head(), 20);
 		toT.pop();
 		assertEquals(toT.head(), 30);
-
 	}
 
 }

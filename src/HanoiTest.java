@@ -23,6 +23,7 @@ public class HanoiTest {
 		//assertEquals(tmp1,toT.getSlots()[1].head());
 		init.getSlots()[0].pop();
 		assertEquals(init.getSlots()[0].head(), toT.getSlots()[0].head());
+		
 	}
 	public void testAllHanoi(){
 		

@@ -24,11 +24,23 @@ public class BoundedTest {
 	public void testGetNumberOfElements() {
 		BoundedStack toT = new BoundedStack(10);
 		assertEquals(0,toT.getNumberOfElements());
-		toT.push(1);
+		try {
+			toT.push(1);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertEquals(1,toT.getNumberOfElements());
-		toT.push(2);
+		try {
+			toT.push(2);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertEquals(2,toT.getNumberOfElements());
-		toT.pop();
+		try {
+			toT.pop();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertEquals(1,toT.getNumberOfElements());
 
 	}
@@ -37,11 +49,23 @@ public class BoundedTest {
 	public void testIsFull() {
 		BoundedStack toT= new BoundedStack(3);
 		assertFalse(toT.isFull());
-		toT.push(20);
+		try {
+			toT.push(20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertFalse(toT.isFull());
-		toT.push(20);
+		try {
+			toT.push(20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertFalse(toT.isFull());
-		toT.push(20);
+		try {
+			toT.push(20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertTrue(toT.isFull());
 	}
 
@@ -49,37 +73,52 @@ public class BoundedTest {
 	public void testIsEmpty() {
 		BoundedStack toT= new BoundedStack(3);
 		assertTrue(toT.isEmpty());
-		toT.push(20);
+		try {
+			toT.push(20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 		assertFalse(toT.isEmpty());
 	}
 
 	@Test
 	public void testPush() {
 		BoundedStack toT = new BoundedStack(10);
-		toT.push(20);
-		assertEquals(toT.head(), 20);
-		toT.push(30);
-		assertEquals(toT.head(), 30);
+		try {
+			toT.push(20);
+			assertEquals(toT.head(), 20);
+			toT.push(30);
+			assertEquals(toT.head(), 30);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 
 	}
 
 	@Test
 	public void testHead() {
 		BoundedStack toT = new BoundedStack(10);
-		toT.push(20);
-		assertEquals(toT.head(), 20);
+		try {
+			toT.push(20);
+			assertEquals(toT.head(), 20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testPop() {
 		BoundedStack toT = new BoundedStack(10);
-		toT.push(20);
-		assertEquals(toT.head(), 20);
-		toT.push(30);
-		assertEquals(toT.head(), 30);
-		toT.pop();
-		assertEquals(toT.head(), 20);
-
+		try {
+			toT.push(20);
+			assertEquals(toT.head(), 20);
+			toT.push(30);
+			assertEquals(toT.head(), 30);
+			toT.pop();
+			assertEquals(toT.head(), 20);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

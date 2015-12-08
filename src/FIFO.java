@@ -25,7 +25,11 @@ public class FIFO {
 	}
 	
 	public void push (int x) {
-		stack.push(x);
+		try {
+			stack.push(x);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public int head () {
@@ -34,15 +38,32 @@ public class FIFO {
 	
 	public void pop () {
 		while(!stack.isEmpty()) {
-			int val = stack.head();
-			stack.pop();
-			tmp.push(val);
+			int val;
+			try {
+				val = stack.head();
+				stack.pop();
+				tmp.push(val);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			}
 		}
-		tmp.pop();
-		while(!tmp.isEmpty()) {
-			int val = tmp.head();
+		
+		try {
 			tmp.pop();
-			stack.push(val);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
+		
+		while(!tmp.isEmpty()) {
+			int val;
+			try {
+				val = tmp.head();
+				tmp.pop();
+				stack.push(val);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 }

@@ -8,12 +8,18 @@ public class Hanoi {
 			slots[i] = new BoundedStack(number);
 			
 		}
+
 		for(int i =number;i>0;i--){
-			slots[0].push(i);
+			try {
+				slots[0].push(i);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
 	
+
 	public boolean moveADisk(int from, int to){
 		if( ( slots[to].getNumberOfElements()== 0 ||slots[to].head()>slots[from].head() )
 				&& to>=0 && to<=3 
@@ -29,6 +35,5 @@ public class Hanoi {
 	public BoundedStack[] getSlots(){
 		return slots;
 	}
-	
 
 }

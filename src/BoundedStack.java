@@ -25,14 +25,16 @@ public class BoundedStack {
 	}
 	
 	public void push(int x) throws IllegalStateException{
+		if(number<0 || number>getSize()) throw new IllegalStateException("Wrong Index");
 		stack[number]=x;
 		number++;
 	}
 	public int head() throws IllegalStateException{
+		if(number<0 || number>getSize()) throw new IllegalStateException("Wrong Index");
 		return stack[number-1];
 	}
 	public void pop() throws IllegalStateException{
-		//stack[number]=;
+		if(isEmpty()) throw new IllegalStateException("Empty stack");
 		number--;
 	}
 	

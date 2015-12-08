@@ -30,11 +30,11 @@ public class HanoiTest {
 	
 	@Test
 	public void testAllHanoi(){
+		toTest.print();
 		move(3,0,2,1);
 	}
 	
 	public void move(int number, int from, int to, int via){
-		
 		if(number>0){
 			move(number-1,from,via,to);
 			toTest.moveADisk(from, to);

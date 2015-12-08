@@ -20,7 +20,6 @@ public class Hanoi {
 	}
 	
 	public boolean moveADisk(int from, int to){
-		print();
 		try{
 			if( ( slots[to].getNumberOfElements()== 0 ||slots[to].head()>slots[from].head() )
 					&& to>=0 && to<=3 

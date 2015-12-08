@@ -38,5 +38,22 @@ public class Hanoi {
 	public BoundedStack[] getSlots(){
 		return slots;
 	}
+	
+	public void print () {
+		for (int i = 0; i < slots.length; i++) {
+			printATower(i);
+		}
+	}
+	
+	public void printATower(int index) {
+		System.out.print("Etat de la tour numéro "+index+": ");
+		if(slots[index].isEmpty()) System.out.print("vide");
+		else {
+			for (int i = 0; i < slots[index].getNumberOfElements(); i++) {
+				System.out.print(slots[index].getArrayElement(i) + " ");
+			}
+			System.out.println();
+		}
+	}
 
 }

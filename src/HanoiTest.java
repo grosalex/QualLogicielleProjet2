@@ -38,6 +38,7 @@ public class HanoiTest {
 		if(number>0){
 			move(number-1,from,via,to);
 			toTest.moveADisk(from, to);
+			toTest.print();
 			move(number-1,via,to,from);
 		}
 	}
